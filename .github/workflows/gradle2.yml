@@ -32,3 +32,23 @@ jobs:
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
       with:
         arguments: build
+    - uses: actions/upload-artifact@main
+      with:
+        name: artifact
+        path: public/
+    
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/download-artifact@main
+      with:
+        name: artifacts
+        path: public
+    
+    - name: Grant permissions to gradlew
+      run: chmod +x gradlew
+    - name: Test
+      run: ./gradlew test --tests "*"
