@@ -10,5 +10,5 @@ public interface Item {
     void setDueDate(Calendar dueDate);
     Priority getPriority();
     void setPriority(Priority priority);
-
+    void setItemState(String itemState);
 }
