@@ -8,6 +8,7 @@ public class ItemImpl implements Item{
     private String item;
     private Calendar dueDate;
     private Priority priority;
+    private String itemState = "Open";
 
     public String getItem() {
         return item;
@@ -31,5 +32,13 @@ public class ItemImpl implements Item{
 
     public void setPriority(Priority Priority) {
         this.priority = priority;
+    }
+
+    public String getItemState() {
+        return itemState;
+    }
+
+    public void setItemState(String itemState) {
+        this.itemState = itemState;
     }
 }

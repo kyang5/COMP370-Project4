@@ -10,4 +10,9 @@ public class PriorityImpl implements Priority {
     public void setPriority(String priority) {
         this.priority = priority;
     }
+
+    public int compareTo(Priority other) {
+        int S = priority.compareTo(other.getPriority());
+        return S;
+    }
 }

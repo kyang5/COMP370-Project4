@@ -1,13 +1,10 @@
 package com.list.model.list;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 public class ListOfItemsImpl implements ListOfItems{
     private List<Item> items = new ArrayList<>();
+
 
     @Override
     public List<Item> getListItems() {
@@ -35,8 +32,8 @@ public class ListOfItemsImpl implements ListOfItems{
     }
 
     @Override
-    public void removeItem(Item item) {
+    public void completeItem(Item item) {
+        item.setItemState("Closed");
         items.remove(item);
     }
-
 }
